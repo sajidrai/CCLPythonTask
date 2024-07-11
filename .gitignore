@@ -1,0 +1,10 @@
+/path/
+.coverage
+.terraform
+__pycache__/
+output.txt
+terraform.tfstate
+terraform.tfstate.backup
+returnDiff.zip
+getAndSaveIntoDynamodb.zip
+.terraform.lock.hcl
