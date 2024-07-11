@@ -20,8 +20,8 @@ This project sets up an AWS infrastructure using Terraform. It includes the foll
 ### 1. Clone the Repository
 
 ```sh
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/sajidrai/CCLPythonTask.git
+cd CCLPythonTask
 ```
 ### 2. Install Python Dependencies
 Install the necessary Python packages for running unit tests.
