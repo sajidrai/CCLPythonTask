@@ -20,8 +20,9 @@ This project sets up an AWS infrastructure using Terraform. It includes the foll
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/sajidrai/CCLPythonTask.git
+git clone https://github.com/sajidrai/CCLPythonTask/tree/main
 cd CCLPythonTask
+
 ```
 ### 2. Install Python Dependencies
 Install the necessary Python packages for running unit tests.
@@ -57,13 +58,32 @@ wait for 5, 10 seconds so that dynamodb table created and data is populated.
 Outputs:
 api_gateway_url = "<API_TESTING_URL>"
 
+If you are testing this application before 16:20 CET, you might encounter an error indicating that either the current day's data or the previous day's data is not present in the database.
 better to test the application after 16:00 CET as the reference rates are usually updated at around 16:00 CET every working day, except on TARGET closing days. [Learn more about CET time zone](https://en.wikipedia.org/wiki/Central_European_Time)
+
+so populate the current data using below script.
+
+### Populating Dummy Data
+To populate dummy data, run the following script:
+
+```sh
+python3 papulateDummyData.py
+```
+This script will copy the data from two days ago and save it with the current day's date, ensuring that the necessary data is present for testing.
+
 
 ### 7. Verify the Deployment
 After the Terraform apply completes, you can verify the deployment by checking the AWS Management Console for the created resources:
 
-S3 bucket
-DynamoDB table
-Lambda functions
-CloudWatch Events rule
-API Gateway
+- S3 bucket
+- DynamoDB table
+- Lambda functions
+- CloudWatch Events rule
+- API Gateway
+
+### Cleaning Up
+To destroy the resources created by Terraform, run:
+```sh
+terraform destroy
+```
+Type yes when prompted to confirm the destroy.
